@@ -17,27 +17,28 @@ import fpa.pages.businessUnit;
 import fpa.pages.company;
 import fpa.pages.department;
 import fpa.pages.location;
+import fpa.pages.templateAccountGroup;
 
 public class forecast extends TestComponents {
 	@Test
 	public void forecastflow() throws IOException, InterruptedException {
 		// TODO Auto-generated method s9ub
-		String companycode = "Ideas2IT95";
-		String companyname = "Ideas2IT95";
+		String companycode = "Ideas2IT97";
+		String companyname = "Ideas2IT97";
 		String companycurrency = "EUR";
 		String fiscalcalendar = "FC01";
 		String locationcode = "Losangeles";
 		String locationname = "Losangeles";
 		String countryname = "United States";
-		String BUcode = "RAVEN50";
-		String BUname = "RAVEN50";
-		String Deptcode = "admin15";
-		String Deptname = "admin15";
+		String BUcode = "RAVEN51";
+		String BUname = "RAVEN51";
+		String Deptcode = "admin16";
+		String Deptname = "admin16";
 		String template_name = "onetime7";
 		String accountcode = " GL006";
 		String accountname = " COGS6";
 		String accountdescription = " COGS6";
-		String tagname = "tag5";
+		String tagname = "tag6";
 
 		Landingpage lp = new Landingpage(driver);
 		lp.goTo();
@@ -51,6 +52,8 @@ public class forecast extends TestComponents {
 		bu.addBusinessUnit(BUcode, BUname);
 		department dep = new department(driver);
 		dep.addDepartment(Deptcode, Deptname);
+		templateAccountGroup tag = new templateAccountGroup(driver);
+		tag.addtemplateaccountgroup(tagname);
 
 //		homepage(driver);
 //		addtemplateaccountgroup(driver, wait, tagname);
@@ -102,24 +105,6 @@ public class forecast extends TestComponents {
 		}
 
 		driver.findElement(By.xpath("//button[text()='Save']")).click();
-
-	}
-
-	public static void addtemplateaccountgroup(WebDriver driver, WebDriverWait wait, String tagname) {
-		WebElement master_data_management = wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//div[@class='card-title MuiBox-root css-1itv5e3']/p[text()='Master Data Management']")));
-		master_data_management.click();
-		WebElement tag = wait.until(
-				ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Template Account Group']")));
-		tag.click();
-		WebElement addTag = wait.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//button[text()='+ Add Template Account Group']")));
-		addTag.click();
-		WebElement tagName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("name")));
-		tagName.sendKeys(tagname);
-		driver.findElement(By.xpath("//button[text()='Save']")).click();
-
-		// driver.findElement(By.xpath(".react-select-container.css-b62m3t-container")).click();
 
 	}
 

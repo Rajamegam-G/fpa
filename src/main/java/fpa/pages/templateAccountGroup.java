@@ -3,6 +3,7 @@ package fpa.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,20 +18,27 @@ public class templateAccountGroup extends abstractComponents {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	public void addtemplateaccountgroup(WebDriverWait wait, String tagname) {
-		WebElement master_data_management = wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//div[@class='card-title MuiBox-root css-1itv5e3']/p[text()='Master Data Management']")));
-		master_data_management.click();
-		WebElement tag = wait.until(
-				ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Template Account Group']")));
+
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-1fohtr1']/div/p[text()='Template Account Group']")
+	WebElement tag;
+	@FindBy(xpath = "//button[text()='+ Add Template Account Group']")
+	WebElement addTag;
+	@FindBy(id = "name")
+	WebElement tagName;
+	@FindBy(xpath = "//button[text()='Save']")
+	WebElement submit;
+	@FindBy(xpath = "//h6[text()='Acme Corporation']")
+	WebElement homepage;
+
+	public void addtemplateaccountgroup(String tagname) {
+		homepage.click();
+		goToForecastAttributes();
 		tag.click();
-		WebElement addTag = wait.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//button[text()='+ Add Template Account Group']")));
+		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Add Template Account Group']"));
 		addTag.click();
-		WebElement tagName = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("name")));
+		waitForpresenceofElementLocated(By.id("name"));
 		tagName.sendKeys(tagname);
-		driver.findElement(By.xpath("//button[text()='Save']")).click();
+		submit.click();
 
 		// driver.findElement(By.xpath(".react-select-container.css-b62m3t-container")).click();
 

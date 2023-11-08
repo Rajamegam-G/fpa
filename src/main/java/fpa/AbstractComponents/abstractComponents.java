@@ -18,6 +18,10 @@ public class abstractComponents {
 	WebElement metaStructureTile;
 	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Core Data Structure']")
 	WebElement coreDataStructureTile;
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Attribute Management']")
+	WebElement attributeManagement;
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Attributes']")
+	WebElement forecastAttributes;
 
 	public abstractComponents(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -55,6 +59,13 @@ public class abstractComponents {
 		masterDataTile.click();
 		metaStructureTile.click();
 		coreDataStructureTile.click();
+
+	}
+
+	public void goToForecastAttributes() {
+		masterDataTile.click();
+		attributeManagement.click();
+		forecastAttributes.click();
 
 	}
 }

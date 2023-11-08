@@ -2,38 +2,40 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-06T09:16:02 IST" name="Default suite" finished-at="2023-11-06T09:17:19 IST" duration-ms="77499">
+  <suite started-at="2023-11-08T18:58:00 IST" name="Default suite" finished-at="2023-11-08T18:58:21 IST" duration-ms="20880">
     <groups>
     </groups>
-    <test started-at="2023-11-06T09:16:02 IST" name="Default test" finished-at="2023-11-06T09:17:19 IST" duration-ms="77499">
+    <test started-at="2023-11-08T18:58:00 IST" name="Default test" finished-at="2023-11-08T18:58:21 IST" duration-ms="20880">
       <class name="fpa.test.forecast">
-        <test-method is-config="true" signature="launchapplication()[pri:0, instance:fpa.test.forecast@32b260fa]" started-at="2023-11-06T09:16:02 IST" name="launchapplication" finished-at="2023-11-06T09:16:06 IST" duration-ms="3837" status="PASS">
+        <test-method is-config="true" signature="launchapplication()[pri:0, instance:fpa.test.forecast@1b1426f4]" started-at="2023-11-08T18:58:00 IST" name="launchapplication" finished-at="2023-11-08T18:58:07 IST" duration-ms="6701" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchapplication -->
-        <test-method signature="forecastflow()[pri:0, instance:fpa.test.forecast@32b260fa]" started-at="2023-11-06T09:16:06 IST" name="forecastflow" finished-at="2023-11-06T09:17:19 IST" duration-ms="73383" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="forecastflow()[pri:0, instance:fpa.test.forecast@1b1426f4]" started-at="2023-11-08T18:58:07 IST" name="forecastflow" finished-at="2023-11-08T18:58:21 IST" duration-ms="13951" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[element click intercepted: Element <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall opacity-full css-k01o0a" tabindex="0" type="button">...</button> is not clickable at point (1382, 260). Other element would receive the click: <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg">...</svg>
-  (Session info: chrome=118.0.5993.120)
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.106)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.14.1', revision: '03f8ede370'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b69adfdd9af6acad9540c559df3e7f10, clickElement {id=6757A32187429D863DD667643EF88658_element_1024}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Windows\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57537}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57537/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b69adfdd9af6acad9540c559df3e7f10)] -> xpath: //tbody/tr[2]/td[10]/div/div/button]
-Session ID: b69adfdd9af6acad9540c559df3e7f10]]>
+Command: [29744beb39f576dd1e79785007217806, clickElement {id=C9D3D74AC813642805FF68ECC9A99E8C_element_307}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.106, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\Windows\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56820/devtoo..., se:cdpVersion: 119.0.6045.106, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (29744beb39f576dd1e79785007217806)] -> xpath: //p[text()='ACME-ACME corporation']]
+Session ID: 29744beb39f576dd1e79785007217806]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall opacity-full css-k01o0a" tabindex="0" type="button">...</button> is not clickable at point (1382, 260). Other element would receive the click: <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg">...</svg>
-  (Session info: chrome=118.0.5993.120)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.106)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.14.1', revision: '03f8ede370'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b69adfdd9af6acad9540c559df3e7f10, clickElement {id=6757A32187429D863DD667643EF88658_element_1024}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Windows\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57537}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57537/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b69adfdd9af6acad9540c559df3e7f10)] -> xpath: //tbody/tr[2]/td[10]/div/div/button]
-Session ID: b69adfdd9af6acad9540c559df3e7f10
+Command: [29744beb39f576dd1e79785007217806, clickElement {id=C9D3D74AC813642805FF68ECC9A99E8C_element_307}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.106, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\Windows\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56820/devtoo..., se:cdpVersion: 119.0.6045.106, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (29744beb39f576dd1e79785007217806)] -> xpath: //p[text()='ACME-ACME corporation']]
+Session ID: 29744beb39f576dd1e79785007217806
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -48,13 +50,14 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-at fpa.pages.department.addDepartment(department.java:61)
-at fpa.test.forecast.forecastflow(forecast.java:53)
+at fpa.pages.location.addLocation(location.java:50)
+at fpa.test.forecast.forecastflow(forecast.java:50)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,11 +88,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forecastflow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:fpa.test.forecast@32b260fa]" started-at="2023-11-06T09:17:19 IST" name="tearDown" finished-at="2023-11-06T09:17:19 IST" duration-ms="228" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:fpa.test.forecast@1b1426f4]" started-at="2023-11-08T18:58:21 IST" name="tearDown" finished-at="2023-11-08T18:58:21 IST" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
