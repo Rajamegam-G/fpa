@@ -54,52 +54,10 @@ public class forecast extends TestComponents {
 		dep.addDepartment(Deptcode, Deptname);
 		templateAccountGroup tag = new templateAccountGroup(driver);
 		tag.addtemplateaccountgroup(tagname);
-		glAccount gl= new glAccount(driver);
+		glAccount gl = new glAccount(driver);
 		gl.addglaccount(accountcode, accountname, accountdescription, tagname);
-		
 
-//		addglaccount(driver, wait, a, accountcode, accountname, accountdescription, tagname);
-//		homepage(driver);
 //		planningtemplates(driver, wait, template_name);
-	}
-
-
-	public static void addglaccount(WebDriver driver, WebDriverWait wait, Actions a, String accountcode,
-			String accountname, String accountdescription, String tagname) throws InterruptedException {
-		Thread.sleep(3000);
-		WebElement accounts = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Accounts']")));
-		accounts.click();
-		WebElement addrow = wait.until(ExpectedConditions
-				.presenceOfElementLocated(By.xpath("//tbody/tr[1]/td[24]/div/span[@aria-label='Add Row']")));
-		addrow.click();
-		WebElement GLcode = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody/tr[2]/td[2]")));
-		a.doubleClick(GLcode).sendKeys(accountcode).perform();
-		WebElement GLAccount = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody/tr[2]/td[3]")));
-		a.doubleClick(GLAccount).sendKeys(accountname).perform();
-		WebElement Account_Description = driver.findElement(By.xpath("//tbody/tr[2]/td[4]"));
-		a.doubleClick(Account_Description).sendKeys(accountdescription).perform();
-		WebElement Account_Type = driver.findElement(By.xpath("//tbody/tr[2]/td[5]"));
-		a.doubleClick(Account_Type).perform();
-		WebElement accounttype_values = driver.findElement(By.xpath("//div[@id='P&L']"));
-		accounttype_values.click();
-		WebElement Active_from = driver.findElement(By.xpath("//tbody/tr[2]/td[8]"));
-		a.doubleClick(Active_from).sendKeys("01/01/2023").perform();
-		WebElement allocationgroup = driver.findElement(By.xpath("//tbody/tr[2]/td[12]"));
-		a.scrollToElement(allocationgroup).perform();
-		WebElement forecastrelevant = driver.findElement(By.xpath("//tbody/tr[2]/td[10]"));
-		a.click(forecastrelevant).perform();
-		WebElement templateaccountgroup = driver.findElement(By.xpath("//tbody/tr[2]/td[11]"));
-		a.click(templateaccountgroup).perform();
-		List<WebElement> tags = driver.findElements(By.xpath("//div[@class='jdropdown-content']/div"));
-		for (WebElement tgroups : tags) {
-			if (tgroups.getText().equalsIgnoreCase(tagname)) {
-				tgroups.click();
-			}
-		}
-
-		driver.findElement(By.xpath("//button[text()='Save']")).click();
-
 	}
 
 	public static void planningtemplates(WebDriver driver, WebDriverWait wait, String template_name) {
