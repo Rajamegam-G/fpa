@@ -20,8 +20,7 @@ public class department extends abstractComponents {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//h6[text()='Acme Corporation']")
-	WebElement homepage;
+	
 	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Department']")
 	WebElement Departmenttile;
 	@FindBy(xpath = "//tbody/tr[1]/td[13]/div/span[@aria-label='Add Row']")
@@ -42,7 +41,7 @@ public class department extends abstractComponents {
 	public void addDepartment(String Deptcode, String Deptname) throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
-		homepage.click();
+		goToHomePage();
 		Thread.sleep(3000);
 		goToCoreBusinessStructure();
 		Departmenttile.click();
@@ -56,9 +55,9 @@ public class department extends abstractComponents {
 		a.doubleClick(activeDate).sendKeys("1/1/23").perform();
 		submit.click();
 		Thread.sleep(3000);
-		a.scrollToElement(targetElement).build().perform();
-		waitForWebElementToBeClickable(assignDepartment);
-		assignDepartment.click();
+//		a.scrollToElement(targetElement).build().perform();
+//		waitForWebElementToBeClickable(assignDepartment);
+//		assignDepartment.click();
 
 	}
 }

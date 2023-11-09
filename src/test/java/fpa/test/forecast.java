@@ -16,6 +16,7 @@ import fpa.pages.Landingpage;
 import fpa.pages.businessUnit;
 import fpa.pages.company;
 import fpa.pages.department;
+import fpa.pages.glAccount;
 import fpa.pages.location;
 import fpa.pages.templateAccountGroup;
 
@@ -23,27 +24,26 @@ public class forecast extends TestComponents {
 	@Test
 	public void forecastflow() throws IOException, InterruptedException {
 		// TODO Auto-generated method s9ub
-		String companycode = "Ideas2IT97";
-		String companyname = "Ideas2IT97";
+		String companycode = "Ideas2IT100";
+		String companyname = "Ideas2IT100";
 		String companycurrency = "EUR";
 		String fiscalcalendar = "FC01";
 		String locationcode = "Losangeles";
 		String locationname = "Losangeles";
 		String countryname = "United States";
-		String BUcode = "RAVEN51";
-		String BUname = "RAVEN51";
-		String Deptcode = "admin16";
-		String Deptname = "admin16";
+		String BUcode = "RAVEN54";
+		String BUname = "RAVEN54";
+		String Deptcode = "admin19";
+		String Deptname = "admin19";
 		String template_name = "onetime7";
-		String accountcode = " GL006";
-		String accountname = " COGS6";
-		String accountdescription = " COGS6";
-		String tagname = "tag6";
+		String accountcode = " GL007";
+		String accountname = " COGS7";
+		String accountdescription = " COGS7";
+		String tagname = "tag7";
 
 		Landingpage lp = new Landingpage(driver);
 		lp.goTo();
 		lp.landinpage();
-
 		company cp = new company(driver);
 		cp.addcompany(companycode, companyname, companycurrency, fiscalcalendar);
 		location loc = new location(driver);
@@ -54,21 +54,15 @@ public class forecast extends TestComponents {
 		dep.addDepartment(Deptcode, Deptname);
 		templateAccountGroup tag = new templateAccountGroup(driver);
 		tag.addtemplateaccountgroup(tagname);
+		glAccount gl= new glAccount(driver);
+		gl.addglaccount(accountcode, accountname, accountdescription, tagname);
+		
 
-//		homepage(driver);
-//		addtemplateaccountgroup(driver, wait, tagname);
 //		addglaccount(driver, wait, a, accountcode, accountname, accountdescription, tagname);
 //		homepage(driver);
 //		planningtemplates(driver, wait, template_name);
 	}
 
-	public static void homepage(WebDriver driver) throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(
-				"//div[@class='MuiGrid-root MuiGrid-container css-8p7p4d']//div[@class='MuiGrid-root MuiGrid-item css-v5xql3']"))
-				.click();
-
-	}
 
 	public static void addglaccount(WebDriver driver, WebDriverWait wait, Actions a, String accountcode,
 			String accountname, String accountdescription, String tagname) throws InterruptedException {

@@ -22,6 +22,8 @@ public class abstractComponents {
 	WebElement attributeManagement;
 	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Attributes']")
 	WebElement forecastAttributes;
+	@FindBy(xpath = "//h6[text()='Acme Corporation']")
+	WebElement homepage;
 
 	public abstractComponents(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -67,5 +69,9 @@ public class abstractComponents {
 		attributeManagement.click();
 		forecastAttributes.click();
 
+	}
+
+	public void goToHomePage() {
+		homepage.click();
 	}
 }
