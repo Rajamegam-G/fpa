@@ -58,16 +58,16 @@ public class glAccount extends abstractComponents {
 		waitForpresenceofElementLocated(By.xpath("//tbody/tr[1]/td[24]/div/span[@aria-label='Add Row']"));
 		addRow.click();
 		waitForWebElementToBeClickable(glCode);
-		a.doubleClick(glCode).sendKeys(accountcode).perform();
+		a.doubleClick(glCode).pause(1000).sendKeys(accountcode).build().perform();
 		waitForWebElementToBeClickable(glAccount);
-		a.doubleClick(glAccount).sendKeys(accountname).perform();
-		a.doubleClick(glAccountDescription).sendKeys(accountdescription).perform();
+		a.doubleClick(glAccount).sendKeys(accountname).build().perform();
+		a.doubleClick(glAccountDescription).sendKeys(accountdescription).build().perform();
 		a.doubleClick(accountType).perform();
 		accountTypeValues.click();
-		a.doubleClick(activeFrom).sendKeys("01/01/2023").perform();
+		a.doubleClick(activeFrom).sendKeys("01/01/2023").build().perform();
 		a.scrollToElement(allocationGroup).perform();
-		a.click(forecastRelevant).perform();
-		a.click(templateAccountgroup).perform();
+		a.click(forecastRelevant).build().perform();
+		a.doubleClick(templateAccountgroup).build().perform();
 		for (WebElement tgroups : tags) {
 			if (tgroups.getText().equalsIgnoreCase(tagname)) {
 				tgroups.click();

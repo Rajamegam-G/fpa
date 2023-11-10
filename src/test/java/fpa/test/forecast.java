@@ -24,22 +24,22 @@ public class forecast extends TestComponents {
 	@Test
 	public void forecastflow() throws IOException, InterruptedException {
 		// TODO Auto-generated method s9ub
-		String companycode = "Ideas2IT101";
-		String companyname = "Ideas2IT101";
+		String companycode = "Ideas2IT103";
+		String companyname = "Ideas2IT103";
 		String companycurrency = "EUR";
 		String fiscalcalendar = "FC01";
 		String locationcode = "Losangeles";
 		String locationname = "Losangeles";
 		String countryname = "United States";
-		String BUcode = "RAVEN55";
-		String BUname = "RAVEN55";
-		String Deptcode = "admin20";
-		String Deptname = "admin20";
-		String template_name = "onetime8";
-		String accountcode = " GL008";
-		String accountname = " COGS8";
-		String accountdescription = "COGS8";
-		String tagname = "tag8";
+		String BUcode = "RAVEN57";
+		String BUname = "RAVEN57";
+		String Deptcode = "admin22";
+		String Deptname = "admin22";
+		String template_name = "onetime9";
+		String accountcode = " GL009";
+		String accountname = " COGS9";
+		String accountdescription = "COGS9";
+		String tagname = "tag9";
 		Landingpage lp = new Landingpage(driver);
 		lp.goTo();
 		lp.landinpage();
