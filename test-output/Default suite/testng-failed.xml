@@ -5,8 +5,8 @@
     <classes>
       <class name="fpa.test.forecast">
         <methods>
-          <include name="launchapplication"/>
           <include name="tearDown"/>
+          <include name="launchapplication"/>
           <include name="forecastflow"/>
         </methods>
       </class> <!-- fpa.test.forecast -->

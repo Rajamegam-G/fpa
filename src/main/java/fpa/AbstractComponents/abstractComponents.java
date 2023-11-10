@@ -22,6 +22,12 @@ public class abstractComponents {
 	WebElement attributeManagement;
 	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Attributes']")
 	WebElement forecastAttributes;
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Streamlined Forecast']")
+	WebElement streamlinedForecast;
+	@FindBy(xpath="//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Administration']")
+	WebElement forecastAdministration;
+	@FindBy(xpath="//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Setup']")
+	WebElement setup;
 	@FindBy(xpath = "//h6[text()='Acme Corporation']")
 	WebElement homepage;
 
@@ -69,6 +75,13 @@ public class abstractComponents {
 		attributeManagement.click();
 		forecastAttributes.click();
 
+	}
+
+	public void goToForecastAdministration() {
+		streamlinedForecast.click();
+		forecastAdministration.click();
+		setup.click();
+		
 	}
 
 	public void goToHomePage() {

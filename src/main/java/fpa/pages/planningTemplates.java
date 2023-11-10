@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,30 +20,40 @@ public class planningTemplates extends abstractComponents {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	public void planningtemplates(WebDriver driver, WebDriverWait wait, String template_name) {
-		WebElement forecast_setup = wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//div[@class='card-title MuiBox-root css-1itv5e3']/p[text()='Forecast Setup']")));
-		forecast_setup.click();
-		WebElement planning_templates = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Planning Templates']")));
-		planning_templates.click();
-		WebElement newtemplate = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='+ Add New Template']")));
+
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Templates']")
+	WebElement templates;
+	@FindBy(xpath = "//button[text()='+ Add New Template']")
+	WebElement newtemplate;
+	@FindBy(xpath = "//button[text()='Create New Template']")
+	WebElement createnewtemplate;
+	@FindBy(id = "name")
+	WebElement templatename;
+	@FindBy(xpath = "//div[@id='mui-component-select-type']")
+	WebElement selectTemplateType;
+	@FindBy(xpath = "//div/ul/li")
+	List<WebElement> listOfTemplates;
+	@FindBy(xpath = "//button[text()='Save'")
+	WebElement submit;
+
+	public void planningtemplates(String template_name) {
+		goToHomePage();
+		goToForecastAdministration();
+		templates.click();
+		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Add New Template']"));
 		newtemplate.click();
-		WebElement createnewtemplate = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[text()='Create New Template']")));
+		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Create New Template']"));
 		createnewtemplate.click();
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("name"))).sendKeys(template_name);
-		driver.findElement(By.xpath("//div[@id='mui-component-select-type']")).click();
-		List<WebElement> type = driver.findElements(By.xpath("//div/ul/li"));
-		for (WebElement templatetype : type) {
+		waitForpresenceofElementLocated(By.id("name"));
+		templatename.sendKeys(template_name);
+		selectTemplateType.click();
+		for (WebElement templatetype : listOfTemplates) {
 			if (templatetype.getText().equalsIgnoreCase("One-Time")) {
 				templatetype.click();
 				break;
 			}
 		}
-		driver.findElement(By.xpath("//button[text()='Save']")).click();
+		submit.click();
 
 	}
 
