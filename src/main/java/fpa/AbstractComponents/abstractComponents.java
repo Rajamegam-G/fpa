@@ -24,10 +24,14 @@ public class abstractComponents {
 	WebElement forecastAttributes;
 	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Streamlined Forecast']")
 	WebElement streamlinedForecast;
-	@FindBy(xpath="//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Administration']")
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Forecast Administration']")
 	WebElement forecastAdministration;
-	@FindBy(xpath="//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Setup']")
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Setup']")
 	WebElement setup;
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Budget Planning']")
+	WebElement budgetPlanning;
+	@FindBy(xpath = "//div[@class='menu-card-container MuiBox-root css-n6niph']/div/p[text()='Input Templates']")
+	WebElement inputTemplates;
 	@FindBy(xpath = "//h6[text()='Acme Corporation']")
 	WebElement homepage;
 
@@ -62,7 +66,7 @@ public class abstractComponents {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.presenceOfElementLocated(FindBy));
 	}
-	
+
 	public void waitForWebElementToBeinvisible(WebElement wele) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.invisibilityOf(wele));
@@ -86,7 +90,14 @@ public class abstractComponents {
 		streamlinedForecast.click();
 		forecastAdministration.click();
 		setup.click();
-		
+
+	}
+
+	public void goToInputTemplates() {
+		streamlinedForecast.click();
+		budgetPlanning.click();
+		inputTemplates.click();
+
 	}
 
 	public void goToHomePage() {
