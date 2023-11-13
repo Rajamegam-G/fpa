@@ -38,29 +38,34 @@ public class abstractComponents {
 	}
 
 	public void visibilityofelements(By findby) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
 	}
 
 	public void waitForElementsToDisappear(WebElement ele) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.invisibilityOf(ele));
 
 	}
 
 	public void waitForWebElementToAppear(WebElement wele) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.visibilityOf(wele));
 	}
 
 	public void waitForWebElementToBeClickable(WebElement wele) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.elementToBeClickable(wele));
 	}
 
 	public void waitForpresenceofElementLocated(By FindBy) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.presenceOfElementLocated(FindBy));
+	}
+	
+	public void waitForWebElementToBeinvisible(WebElement wele) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		wait.until(ExpectedConditions.invisibilityOf(wele));
 	}
 
 	public void goToCoreBusinessStructure() {

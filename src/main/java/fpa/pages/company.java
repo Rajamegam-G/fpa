@@ -43,11 +43,14 @@ public class company extends abstractComponents {
 	WebElement activeDate;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submit;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void addcompany(String companycode, String companyname, String companycurrency, String fiscalcalendar)
 			throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
+		waitForWebElementToBeinvisible(progressbar);
 		goToCoreBusinessStructure();
 		company.click();
 		waitForWebElementToAppear(gocname);

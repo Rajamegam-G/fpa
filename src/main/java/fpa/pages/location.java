@@ -41,11 +41,14 @@ public class location extends abstractComponents {
 	WebElement activeDate;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submit;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void addLocation(String locationcode, String locationname, String countryname,
 			String companycode) throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
+		waitForWebElementToBeinvisible(progressbar);
 		goc.click();
 		Thread.sleep(3000);
 		for (WebElement companydetails : companylist) {

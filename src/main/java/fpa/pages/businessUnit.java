@@ -35,12 +35,15 @@ public class businessUnit extends abstractComponents {
 	WebElement Active_from;
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement submit;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void addBusinessUnit(String BUcode, String BUname) throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
 		homepage.click();
 		Thread.sleep(3000);
+		waitForWebElementToBeinvisible(progressbar);
 		goToCoreBusinessStructure();
 		Thread.sleep(3000);
 		businessUnitTab.click();

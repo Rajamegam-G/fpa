@@ -35,12 +35,15 @@ public class department extends abstractComponents {
 	WebElement targetElement;
 	@FindBy(xpath = "//tbody/tr[2]/td[10]/div/div/button")
 	WebElement assignDepartment;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void addDepartment(String Deptcode, String Deptname) throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
 		goToHomePage();
 		Thread.sleep(3000);
+		waitForWebElementToBeinvisible(progressbar);
 		goToCoreBusinessStructure();
 		Departmenttile.click();
 		Thread.sleep(3000);

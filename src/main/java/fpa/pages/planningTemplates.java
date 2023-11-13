@@ -33,17 +33,21 @@ public class planningTemplates extends abstractComponents {
 	WebElement selectTemplateType;
 	@FindBy(xpath = "//div/ul/li")
 	List<WebElement> listOfTemplates;
-	@FindBy(xpath = "//button[text()='Save'")
+	@FindBy(xpath = "//button[text()='Save']")
 	WebElement submit;
+	@FindBy(xpath = "//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void planningtemplates(String template_name) {
 		goToHomePage();
+		waitForWebElementToBeinvisible(progressbar);
 		goToForecastAdministration();
 		templates.click();
 		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Add New Template']"));
 		newtemplate.click();
-		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Create New Template']"));
+		waitForpresenceofElementLocated(By.xpath("//button[text()='Create New Template']"));
 		createnewtemplate.click();
+		waitForWebElementToBeinvisible(progressbar);
 		waitForpresenceofElementLocated(By.id("name"));
 		templatename.sendKeys(template_name);
 		selectTemplateType.click();

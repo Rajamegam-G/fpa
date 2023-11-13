@@ -27,16 +27,21 @@ public class templateAccountGroup extends abstractComponents {
 	WebElement submit;
 	@FindBy(xpath = "//h6[text()='Acme Corporation']")
 	WebElement homepage;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
-	public void addtemplateaccountgroup(String tagname) {
+	public void addtemplateaccountgroup(String tagname) throws InterruptedException {
 		homepage.click();
+		waitForWebElementToBeinvisible(progressbar);
 		goToForecastAttributes();
 		tag.click();
 		waitForpresenceofElementLocated(By.xpath("//button[text()='+ Add Template Account Group']"));
 		addTag.click();
 		waitForpresenceofElementLocated(By.id("name"));
 		tagName.sendKeys(tagname);
+		Thread.sleep(3000);
 		submit.click();
+		Thread.sleep(3000);
 
 		// driver.findElement(By.xpath(".react-select-container.css-b62m3t-container")).click();
 

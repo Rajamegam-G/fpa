@@ -46,12 +46,16 @@ public class glAccount extends abstractComponents {
 	List<WebElement> tags;
 	@FindBy(xpath = "//button[text()='Save']")
 	WebElement submit;
+	@FindBy(xpath="//span[@role='progressbar']")
+	WebElement progressbar;
 
 	public void addglaccount(String accountcode, String accountname, String accountdescription, String tagname)
 			throws InterruptedException {
 		Actions a = new Actions(driver);
 		Thread.sleep(3000);
 		goToHomePage();
+		Thread.sleep(3000);
+		waitForWebElementToBeinvisible(progressbar);
 		goToCoreBusinessStructure();
 		// waitForWebElementToBeClickable(accounts);
 		glAccountTile.click();
@@ -68,9 +72,11 @@ public class glAccount extends abstractComponents {
 		a.scrollToElement(allocationGroup).perform();
 		a.click(forecastRelevant).build().perform();
 		a.doubleClick(templateAccountgroup).build().perform();
+		Thread.sleep(3000);
 		for (WebElement tgroups : tags) {
-			if (tgroups.getText().equalsIgnoreCase(tagname)) {
+			if (tgroups.getText().contains(tagname)) {
 				tgroups.click();
+				break;
 			}
 		}
 
