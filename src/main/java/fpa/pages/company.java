@@ -43,8 +43,18 @@ public class company extends abstractComponents {
 	WebElement activeDate;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submit;
-	@FindBy(xpath="//span[@role='progressbar']")
+	@FindBy(xpath = "//span[@role='progressbar']")
 	WebElement progressbar;
+	@FindBy(xpath = "//div[@class='MuiFormControl-root MuiTextField-root css-fee8p6']/div/input")
+	WebElement searchbox;
+	@FindBy(xpath = "//tbody/tr[2]")
+	WebElement actionbutton;
+	@FindBy(xpath = "//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-17ql1g7']//*[name()='svg']")
+	WebElement editbutton;
+	@FindBy(id = "name")
+	WebElement newcompanyname;
+	@FindBy(xpath = "//button[normalize-space()='Update']")
+	WebElement updatecompany;
 
 	public void addcompany(String companycode, String companyname, String companycurrency, String fiscalcalendar)
 			throws InterruptedException {
@@ -73,8 +83,31 @@ public class company extends abstractComponents {
 			}
 		}
 		a.scrollToElement(targetElement).build().perform();
-		a.doubleClick(activeDate).sendKeys("01/01/2023").build().perform();
+		a.doubleClick(activeDate).sendKeys("23/1/1").build().perform();
 		submit.click();
+	}
+
+	public void searchcompany(String companycode) throws InterruptedException {
+		waitForWebElementToAppear(gocname);
+		Thread.sleep(2000);
+		gocname.click();
+		searchbox.click();
+		searchbox.sendKeys(companycode);
+		Thread.sleep(3000);
+
+	}
+
+	public void editcompany(String companyname) throws InterruptedException {
+		Actions action = new Actions(driver);
+		Thread.sleep(2000);
+		action.moveToElement(actionbutton).build().perform();
+		action.moveToElement(editbutton).click().build().perform();
+		newcompanyname.click();
+		newcompanyname.sendKeys("new");
+		Thread.sleep(2000);
+		action.moveToElement(updatecompany).click().build().perform();
+		//updatecompany.click();
+
 	}
 
 }
