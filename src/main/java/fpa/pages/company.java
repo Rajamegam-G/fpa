@@ -2,6 +2,7 @@ package fpa.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -55,11 +56,12 @@ public class company extends abstractComponents {
 	WebElement newcompanyname;
 	@FindBy(xpath = "//button[normalize-space()='Update']")
 	WebElement updatecompany;
+	
+	String Date="23/1/1";
 
 	public void addcompany(String companycode, String companyname, String companycurrency, String fiscalcalendar)
 			throws InterruptedException {
 		Actions a = new Actions(driver);
-		Thread.sleep(3000);
 		waitForWebElementToBeinvisible(progressbar);
 		goToCoreBusinessStructure();
 		company.click();
@@ -83,30 +85,27 @@ public class company extends abstractComponents {
 			}
 		}
 		a.scrollToElement(targetElement).build().perform();
-		a.doubleClick(activeDate).sendKeys("23/1/1").build().perform();
+		a.doubleClick(activeDate).sendKeys(Date).build().perform();
 		submit.click();
 	}
 
 	public void searchcompany(String companycode) throws InterruptedException {
-		waitForWebElementToAppear(gocname);
-		Thread.sleep(2000);
+		waitForWebElementToBeinvisible(progressbar);
 		gocname.click();
 		searchbox.click();
 		searchbox.sendKeys(companycode);
-		Thread.sleep(3000);
-
 	}
 
 	public void editcompany(String companyname) throws InterruptedException {
 		Actions action = new Actions(driver);
-		Thread.sleep(2000);
 		action.moveToElement(actionbutton).build().perform();
 		action.moveToElement(editbutton).click().build().perform();
 		newcompanyname.click();
 		newcompanyname.sendKeys("new");
-		Thread.sleep(2000);
+		//waitForWebElementToBeClickable(updatecompany);
+		Thread.sleep(4000);
 		action.moveToElement(updatecompany).click().build().perform();
-		//updatecompany.click();
+		// updatecompany.click();
 
 	}
 

@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,15 +35,10 @@ public class abstractComponents {
 	@FindBy(xpath = "//h6[text()='Acme Corporation']")
 	WebElement homepage;
 
-	public abstractComponents(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-
-	public void visibilityofelements(By findby) {
+	public void visibilityofelements(WebElement ele) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
+		// wait.until(ExpectedConditions.visibilityOfElementLocated(findby));
+		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
 	public void waitForElementsToDisappear(WebElement ele) {
@@ -61,6 +55,7 @@ public class abstractComponents {
 	public void waitForWebElementToBeClickable(WebElement wele) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.elementToBeClickable(wele));
+
 	}
 
 	public void waitForpresenceofElementLocated(By FindBy) {
@@ -72,8 +67,12 @@ public class abstractComponents {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		wait.until(ExpectedConditions.invisibilityOf(wele));
 	}
-	
-	
+
+	public abstractComponents(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	public void goToCoreBusinessStructure() {
 		masterDataTile.click();

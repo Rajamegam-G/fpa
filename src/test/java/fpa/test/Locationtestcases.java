@@ -14,4 +14,9 @@ public class Locationtestcases extends TestComponents {
 		loc.addLocation(locationcode, locationname, countryname, companycode);
 
 	}
+	
+	public void readlocationTest()
+	{
+		
+	}
 }

@@ -12,12 +12,12 @@ import fpa.pages.company;
 
 public class companyTestCase extends TestComponents {
 
-	String companycode = "Ideas2IT0193";
-	String companyname = "Ideas2IT0193";
+	String companycode = "Ideas2IT01103";
+	String companyname = "Ideas2IT01103";
 	String companycurrency = "EUR";
 	String fiscalcalendar = "FC01";
 
-	@Test(priority=0)
+	@Test(priority = 0)
 	// Add company
 	public void addCompanyTest() throws InterruptedException {
 		company cp = new company(driver);
@@ -26,12 +26,11 @@ public class companyTestCase extends TestComponents {
 	}
 
 	// search & read company
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void readCompanyTest() throws InterruptedException {
 		company cp = new company(driver);
-		Thread.sleep(2000);
 		cp.searchcompany(companycode);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		List<WebElement> companyList = driver.findElements(By.xpath("//tbody/tr[2]/td[2]"));
 		for (WebElement company : companyList) {
 			String ccode = company.getText().trim();
@@ -40,8 +39,9 @@ public class companyTestCase extends TestComponents {
 
 		}
 	}
-	//edit the company
-	@Test(priority=2, dependsOnMethods = "readCompanyTest")
+
+	// edit the company
+	@Test(priority = 2, dependsOnMethods = "readCompanyTest")
 	public void editCompanyTest() throws InterruptedException {
 		company cp = new company(driver);
 		cp.editcompany(companycode);
